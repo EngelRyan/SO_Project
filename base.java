@@ -1,13 +1,8 @@
-import java.util.Arrays;
 import java.util.Scanner;
-
 import java.util.Random;
-
 public class base {
     static int MAXIMO_TEMPO_EXECUCAO = 65535;
-
     static int n_processos = 3;
-
     public static void main(String[] args) {
 
         int[] tempo_execucao = new int[n_processos];
@@ -27,6 +22,7 @@ public class base {
 
         while(true) {
             System.out.println("""
+                    \n
                     Escolha o argoritmo?:
                     1 = FCFS
                     2 = SJF Preemptivo
@@ -167,7 +163,6 @@ public class base {
         imprime_stats(tempo_espera);
 
     }
-
     public static void PRIORIDADE(boolean preemptivo, int[] execucao, int[] espera, int[] restante, int[] chegada, int[] prioridade){
         int[] tempo_execucao = execucao.clone();
         int[] tempo_espera = espera.clone();
@@ -182,7 +177,6 @@ public class base {
         imprime_stats(tempo_espera);
 
     }
-
     public static void Round_Robin(int[] execucao, int[] espera, int[] restante){
         int[] tempo_execucao = execucao.clone();
         int[] tempo_espera = espera.clone();
