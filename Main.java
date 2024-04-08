@@ -20,15 +20,15 @@ public class Main {
 
             System.out.println("""
                     \n
-                    Choose the argorhythm?:
+                    Choose the algorithm?:
                     1 = FCFS
                     2 = Preemptive SJF
                     3 = Non-Preemptive SJF
                     4 = Preemptive Priority
                     5 = Non-preemptive priority
                     6 = Round Robin
-                    7 = Prints process list
-                    8 = Popular processes again
+                    7 = Prints task list
+                    8 = Popular task again
                     9 = exit:\s""");
 
             String alg = input.nextLine();
@@ -167,6 +167,18 @@ public class Main {
                 }
             } else {// se for não preemptivo apenas organiza em ordem de chegada
                 running_tasks.sort(Comparator.comparingInt(Task::getAt));
+
+                for (int i = 0; i < running_tasks.size(); i++) {
+                    for (int j = 1; j < running_tasks.size(); j++) {
+                        Task task1 = running_tasks.get(i);
+                        Task task2 = running_tasks.get(j);
+                        if (task1.getAt() == task2.getAt() && task1.getBt() > task2.getBt()) {
+                            // Trocar tarefas se o tempo de chegada for igual e o burst time de task2 for menor
+                            running_tasks.set(i, task2);
+                            running_tasks.set(j, task1);
+                        }
+                    }
+                }
             }
             if (!running_tasks.isEmpty()) {// se a lista não estiver vazia entra
                 //verifica se chegou um novo processo, se não chegou seta o tempo de espera
