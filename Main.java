@@ -12,7 +12,7 @@ public class Main {
     static int at;
     static int prio;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         list_tasks();
         print_tasks();
 
@@ -55,7 +55,8 @@ public class Main {
                     Priority(false);
                     break;
 
-                case "6":
+                case "6"://Round Robin  
+                    RR();
                     break;
 
                 case "7":
@@ -107,20 +108,23 @@ public class Main {
         System.out.println();
         input.nextLine();
     }
-    public static void print_tasks(){
+    public static void print_tasks() throws InterruptedException{
         //Imprime os processos
         for (Task task : tasks){
             task.info();
+            Thread.sleep(600);
         }
     }
-    public static void print_stats () {
+    public static void print_stats () throws InterruptedException {
         //Implementar o calculo e impressão de estatisticas
         double tempo_espera_total = 0;
 
         for(Task task : tasks){
+            Thread.sleep(200);
             System.out.printf("\nTask[%d]: Wait Time= %d\n",task.getNumber(),task.getWt());
             tempo_espera_total += task.getWt();
         }
+        Thread.sleep(200);
         System.out.printf("\nAverage wait time: %.2f \n",(tempo_espera_total/ n_tasks));
     }
     public static void reset_stats(){
@@ -130,13 +134,14 @@ public class Main {
             task.setWt(0);
         }
     }
-    public static void FCFS(){
+    public static void FCFS() throws InterruptedException{
         //implementar código do FCFS
         int time = 1;
         for (Task task : tasks) {//loop principal
             task.setWt(time-1);//seta o valor do tempo de espera
             while (task.getTl() != 0) {//enquanto não terminar a tarefa não termina o loop
                 task.setTl(task.getTl() - 1);
+                Thread.sleep(200);
                 System.out.printf("Time[%d]: Task[%d] Timeleft= %d\n", time, task.getNumber(), task.getTl());
                 time++;
             }
@@ -144,7 +149,7 @@ public class Main {
         print_stats();
         reset_stats();
     }
-    public static void SJF(boolean preempt){
+    public static void SJF(boolean preempt) throws InterruptedException{
         //implementar código SJF
         int time = 1;
         boolean new_arrival = true;
@@ -193,6 +198,7 @@ public class Main {
                 //se o tempo restante for diferente de 0 diminui 1 do tempo e imprime, depois atribui o número da task a last_task
                 if (running_tasks.get(small_bt).getTl() != 0) {
                     running_tasks.get(small_bt).setTl(running_tasks.get(small_bt).getTl() - 1);
+                    Thread.sleep(200);
                     System.out.printf("Time[%d]: Task[%d] Timeleft= %d\n", time, running_tasks.get(small_bt).getNumber(), running_tasks.get(small_bt).getTl());
                     last_task = running_tasks.get(small_bt).getNumber();
                     //se for == 0 remove da lista
@@ -202,6 +208,7 @@ public class Main {
                     }
                 }
             } else {//caso ainda não tenham chegado algum processo
+                Thread.sleep(200);
                 System.out.printf("Time [%d]: No task ready\n", time);
             }
             time++;
@@ -218,7 +225,7 @@ public class Main {
         print_stats();
         reset_stats();
     }
-    public static void Priority(boolean preempt){
+    public static void Priority(boolean preempt) throws InterruptedException{
         //implementar código Prioridade
         int time = 1;
         boolean new_arrival = true;
@@ -267,6 +274,7 @@ public class Main {
                 //se o tempo restante for diferente de 0 diminui 1 do tempo e imprime, depois atribui o número da task a last_task
                 if (running_tasks.get(high_prio).getTl() != 0) {
                     running_tasks.get(high_prio).setTl(running_tasks.get(high_prio).getTl() - 1);
+                    Thread.sleep(200);
                     System.out.printf("Time[%d]: Task[%d] Timeleft= %d\n", time, running_tasks.get(high_prio).getNumber(), running_tasks.get(high_prio).getTl());
                     last_task = running_tasks.get(high_prio).getNumber();
                     //se for == 0 remove da lista
@@ -276,6 +284,7 @@ public class Main {
                     }
                 }
             } else {//caso ainda não tenham chegado algum processo
+                Thread.sleep(200);
                 System.out.printf("Time [%d]: No task ready\n", time);
             }
             time++;
@@ -291,5 +300,39 @@ public class Main {
         } while (has_task);
         print_stats();
         reset_stats();
+    }
+    public static void RR() throws InterruptedException{
+         //implementar código do Round Robin
+         int time = 1;
+         boolean has_task;
+
+         System.out.println("Defina o time slice: ");
+         int time_slice = input.nextInt();
+         
+         do{//loop principal
+            for (Task task : tasks) {
+                if (task.getTl() == 0) {
+                    continue;
+                }
+                for (int i = 0; i<time_slice; i++) {//loop para o time slice
+                    if (task.getTl() == 0) {
+                        break;
+                    }
+                    task.setTl(task.getTl() - 1);
+                    Thread.sleep(200);
+                    System.out.printf("Time[%d]: Task[%d] Timeleft= %d\n", time, task.getNumber(), task.getTl());
+                    time++;
+                }
+            }
+            has_task = false;
+            //verifica se todas as tasks foram concluidas, se sim encerra o loop
+            for (Task task : tasks) {
+                if (task.getTl() > 0) {
+                    has_task = true;
+                    break;
+                }
+            }
+        }while(has_task);
+         reset_stats();
     }
 }
