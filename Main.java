@@ -318,9 +318,9 @@ public class Main {
                     if (task.getTl() == 0) {
                         break;
                     }
+                    System.out.printf("Time[%d]: Task[%d] Timeleft= %d\n", time, task.getNumber(), task.getTl());
                     task.setTl(task.getTl() - 1);
                     Thread.sleep(200);
-                    System.out.printf("Time[%d]: Task[%d] Timeleft= %d\n", time, task.getNumber(), task.getTl());
                     time++;
                 }
             }
