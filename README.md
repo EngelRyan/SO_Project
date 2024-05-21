@@ -52,12 +52,12 @@ Task.java: Esta classe representa uma tarefa. Cada tarefa possui atributos como 
 
 ## Exemplo do Menu
 
-**FCFS**
-**SJF Preemptivo**
-**SJF Não-Preemptivo**
-**Prioridade Preemptivo**
-**Prioridade Não-Preemptivo**
-**Round Robin**
-**Imprimir Lista de Tarefas**
-**Popular Tarefas Novamente**
-**Sair**
+1. **FCFS**
+2. **SJF Preemptivo**
+3. **SJF Não-Preemptivo**
+4. **Prioridade Preemptivo**
+5. **Prioridade Não-Preemptivo**
+6. **Round Robin**
+7. **Imprimir Lista de Tarefas**
+8. **Popular Tarefas Novamente**
+9. **Sair**
