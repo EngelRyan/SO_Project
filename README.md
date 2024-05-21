@@ -18,29 +18,40 @@ Algoritmos de Escalonamento Implementados:
 
 **FCFS (First-Come, First-Served)**
 
+
 **SJF (Shortest Job First) Preemptivo e Não-Preemptivo**
 
+
 **Prioridade Preemptivo e Não-Preemptivo**
+
 
 **Round Robin**
 
 
+
 Modo de Popular Tarefas:
+
 
 **Aleatoriamente**
 
+
 **Manualmente**
+
 
 
 Impressão de Estatísticas:
 
 
+
 **Tempo de Espera para cada tarefa**
+
 
 **Tempo Médio de Espera**
 
 
+
 ## Estrutura do Projeto
+
 
 
 O projeto está organizado da seguinte forma:
