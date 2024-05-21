@@ -12,8 +12,11 @@ Este projeto é uma simulação de diferentes algoritmos de escalonamento de pro
 Algoritmos de Escalonamento Implementados:
 
 **FCFS (First-Come, First-Served)**
+
 **SJF (Shortest Job First) Preemptivo e Não-Preemptivo**
+
 **Prioridade Preemptivo e Não-Preemptivo**
+
 **Round Robin**
 
 Modo de Popular Tarefas:
