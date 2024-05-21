@@ -1,13 +1,13 @@
-#Simulação de Algoritmos de Escalonamento
+# Simulação de Algoritmos de Escalonamento
 
 Este projeto é uma simulação de diferentes algoritmos de escalonamento de processos em sistemas operacionais. A simulação permite aos usuários escolher entre vários algoritmos e observar como cada um deles gerencia a execução de processos.
 
-##Conceitos usados
+## Conceitos usados
 
 **Programação Orientada a Objeto**
 **Algoritimos de Escalonamento**
 
-##Funcionalidades
+## Funcionalidades
 
 Algoritmos de Escalonamento Implementados:
 
@@ -29,14 +29,15 @@ Impressão de Estatísticas:
 **Tempo de Espera para cada tarefa**
 **Tempo Médio de Espera**
 
-##Estrutura do Projeto
+## Estrutura do Projeto
 
 O projeto está organizado da seguinte forma:
 
 Main.java: Este arquivo contém a lógica principal do programa, incluindo a interação com o usuário, escolha de algoritmos de escalonamento, e gerenciamento das tarefas.
+
 Task.java: Esta classe representa uma tarefa. Cada tarefa possui atributos como tempo de execução (bt), tempo de chegada (at) e prioridade (prio). A classe também contém métodos para manipular e acessar esses atributos.
 
-##Exemplo do Menu
+## Exemplo do Menu
 
 **FCFS**
 **SJF Preemptivo**
