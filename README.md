@@ -51,7 +51,9 @@ O projeto está organizado da seguinte forma:
 Main.java: Este arquivo contém a lógica principal do programa, incluindo a interação com o usuário, escolha de algoritmos de escalonamento, e gerenciamento das tarefas.
 
 Task.java: Esta classe representa uma tarefa. Cada tarefa possui atributos como tempo de execução (bt), tempo de chegada (at) e prioridade (prio). A classe também contém métodos para manipular e acessar esses atributos.
+
 <br>
+
 ## Exemplo do Menu
 
 1. **FCFS**
