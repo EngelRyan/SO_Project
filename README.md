@@ -13,7 +13,6 @@ Este projeto é uma simulação de diferentes algoritmos de escalonamento de pro
 <br>
 
 ## Funcionalidades
-
 <br>
 
 ### Algoritmos de Escalonamento Implementados:
