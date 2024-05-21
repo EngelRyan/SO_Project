@@ -23,11 +23,13 @@ Este projeto é uma simulação de diferentes algoritmos de escalonamento de pro
 
 **Round Robin**
 
+
 ### Modo de Popular Tarefas:
 
 **Aleatoriamente**
 
 **Manualmente**
+
 
 ### Impressão de Estatísticas:
 
@@ -36,6 +38,7 @@ Este projeto é uma simulação de diferentes algoritmos de escalonamento de pro
 **Tempo Médio de Espera**
 
 ## Estrutura do Projeto
+
 
 O projeto está organizado da seguinte forma:
 
