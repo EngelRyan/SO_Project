@@ -2,6 +2,7 @@
 
 Este projeto é uma simulação de diferentes algoritmos de escalonamento de processos em sistemas operacionais. A simulação permite aos usuários escolher entre vários algoritmos e observar como cada um deles gerencia a execução de processos.
 
+<br>
 
 ## Conceitos usados
 
@@ -9,11 +10,15 @@ Este projeto é uma simulação de diferentes algoritmos de escalonamento de pro
 
 **Algoritimos de Escalonamento**
 
+<br>
 
 ## Funcionalidades
 
+<br>
 
 ### Algoritmos de Escalonamento Implementados:
+
+<br>
 
 **FCFS (First-Come, First-Served)**
 
@@ -23,6 +28,7 @@ Este projeto é uma simulação de diferentes algoritmos de escalonamento de pro
 
 **Round Robin**
 
+<br>
 
 ### Modo de Popular Tarefas:
 
@@ -30,6 +36,7 @@ Este projeto é uma simulação de diferentes algoritmos de escalonamento de pro
 
 **Manualmente**
 
+<br>
 
 ### Impressão de Estatísticas:
 
@@ -39,14 +46,14 @@ Este projeto é uma simulação de diferentes algoritmos de escalonamento de pro
 
 ## Estrutura do Projeto
 
+<br>
 
 O projeto está organizado da seguinte forma:
-
 
 Main.java: Este arquivo contém a lógica principal do programa, incluindo a interação com o usuário, escolha de algoritmos de escalonamento, e gerenciamento das tarefas.
 
 Task.java: Esta classe representa uma tarefa. Cada tarefa possui atributos como tempo de execução (bt), tempo de chegada (at) e prioridade (prio). A classe também contém métodos para manipular e acessar esses atributos.
-
+<br>
 ## Exemplo do Menu
 
 1. **FCFS**
