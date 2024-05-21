@@ -42,9 +42,9 @@ Este projeto é uma simulação de diferentes algoritmos de escalonamento de pro
 
 **Tempo Médio de Espera**
 
-## Estrutura do Projeto
-
 <br>
+
+## Estrutura do Projeto
 
 O projeto está organizado da seguinte forma:
 
